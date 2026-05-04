@@ -55,7 +55,7 @@
 &msc_input_listener {
     speed_up {
         layers = <FUNCTION>;
-        input-processors = <&zip_wheel_scaler 1 1>; //スクロールを3倍速にする
+        input-processors = <&zip_wheel_scaler 1 2>; //スクロールを0.5倍速にする
     };
 };
 
@@ -65,8 +65,8 @@
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
             //スクロール方向を逆転,,,,,
-            //<&zip_xy_to_scroll_mapper>;
             <&y_to_scroll_mapper>;
+            <&zip_wheel_scaler 1 3>;
     };
 };
 
